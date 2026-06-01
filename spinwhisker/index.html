@@ -270,25 +270,22 @@ PLAY ON ITCH.IO
 </a>
 
 <a class="btn btn-secondary" href="apk/spinwhisker.apk">
-DOWNLOAD APK
+DOWNLOAD .APK
 </a>
 </div>
 
 </section>
-
 <section id="play" class="desktop-only">
 
-<h2 class="section-title">play here. directly in your browser.</h2>
+<h2 class="section-title">play here</h2>
 
 <div class="card" style="text-align:center;">
 
-<iframe
-frameborder="0"
-src="https://itch.io/embed-upload/17676889?color=130618"
-allowfullscreen
-width="640"
-height="360">
-</iframe>
+<button id="playButton" class="btn btn-primary">
+▶ launch
+</button>
+
+<div id="gameContainer" style="margin-top:25px;"></div>
 
 </div>
 
@@ -384,6 +381,24 @@ requestAnimationFrame(animate);
 animate();
 
 </script>
+<script>
 
+document.getElementById("playButton").addEventListener("click", () => {
+
+document.getElementById("gameContainer").innerHTML = `
+<iframe
+frameborder="0"
+src="https://itch.io/embed-upload/17676889?color=130618"
+allowfullscreen
+width="960"
+height="540">
+</iframe>
+`;
+
+document.getElementById("playButton").style.display = "none";
+
+});
+
+</script>
 </body>
 </html>
