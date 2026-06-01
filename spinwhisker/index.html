@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>SpinWhisker | OLACAV Games</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+:root{
+--bg:#0D0A0F;
+--bg2:#16101b;
+--card:#221a2d;
+--text:#F5EEE8;
+--muted:#9b8b80;
+--sun:#FF9A5C;
+--sun2:#E8772A;
+--border:rgba(255,180,120,.15);
+}
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+font-family:'Syne',sans-serif;
+background:var(--bg);
+color:var(--text);
+overflow-x:hidden;
+}
+
+canvas{
+position:fixed;
+inset:0;
+width:100%;
+height:100%;
+z-index:-1;
+opacity:.25;
+}
+
+.container{
+max-width:1100px;
+margin:auto;
+padding:0 24px;
+}
+
+.hero{
+min-height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+}
+
+.logo{
+width:min(500px,90%);
+margin-bottom:30px;
+filter:drop-shadow(0 0 20px rgba(255,154,92,.25));
+}
+
+h1{
+font-size:clamp(3rem,8vw,6rem);
+font-weight:800;
+margin-bottom:16px;
+}
+
+.subtitle{
+max-width:700px;
+color:var(--muted);
+font-size:1.1rem;
+line-height:1.8;
+margin-bottom:40px;
+}
+
+.buttons{
+display:flex;
+gap:15px;
+flex-wrap:wrap;
+justify-content:center;
+}
+
+.btn{
+padding:15px 28px;
+border-radius:10px;
+text-decoration:none;
+font-weight:700;
+transition:.2s;
+}
+
+.btn-primary{
+background:var(--sun);
+color:#111;
+}
+
+.btn-primary:hover{
+transform:translateY(-3px);
+background:var(--sun2);
+}
+
+.btn-secondary{
+border:1px solid var(--border);
+color:white;
+}
+
+.btn-secondary:hover{
+border-color:var(--sun);
+color:var(--sun);
+}
+
+section{
+padding:90px 0;
+}
+
+.section-title{
+font-size:2.4rem;
+margin-bottom:25px;
+color:var(--sun);
+}
+
+.card{
+background:var(--card);
+border:1px solid var(--border);
+border-radius:14px;
+padding:25px;
+}
+
+.story{
+font-size:1.05rem;
+line-height:1.9;
+color:var(--muted);
+}
+
+.quote{
+margin-top:25px;
+font-family:'Space Mono',monospace;
+color:var(--sun);
+font-size:1rem;
+}
+
+.gallery{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:20px;
+}
+
+.gallery img{
+width:100%;
+border-radius:14px;
+border:1px solid var(--border);
+transition:.3s;
+}
+
+.gallery img:hover{
+transform:translateY(-5px);
+}
+
+.features{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+}
+
+.feature{
+background:var(--card);
+border:1px solid var(--border);
+padding:25px;
+border-radius:14px;
+}
+
+.feature h3{
+margin-bottom:10px;
+}
+
+.feature p{
+color:var(--muted);
+}
+
+.info-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:20px;
+}
+
+.info-box{
+background:var(--card);
+border:1px solid var(--border);
+border-radius:14px;
+padding:20px;
+}
+
+.info-title{
+font-weight:700;
+margin-bottom:8px;
+}
+
+.info-value{
+color:var(--muted);
+}
+
+.facts ul{
+padding-left:20px;
+}
+
+.facts li{
+margin-bottom:10px;
+color:var(--muted);
+}
+
+footer{
+border-top:1px solid var(--border);
+padding:40px 20px;
+text-align:center;
+color:var(--muted);
+}
+
+@media(max-width:700px){
+
+.section-title{
+font-size:2rem;
+}
+
+}
+
+</style>
+</head>
+<body>
+
+<canvas id="bg"></canvas>
+
+<div class="container">
+
+<section class="hero">
+
+<img src="logo/game_logo.png" class="logo" alt="SpinWhisker">
+
+<h1>SpinWhisker</h1>
+
+<p class="subtitle">
+A platformer about a spinning cat trapped inside strange dimensions.
+Collect coins, unlock doors, explore mysterious rooms and defeat the final boss.
+</p>
+
+<div class="buttons">
+<a class="btn btn-primary" href="https://gustavoegato.itch.io/spinwhisker" target="_blank">
+Play on itch.io
+</a>
+
+<a class="btn btn-secondary" href="apk/spinwhisker.apk">
+Download APK
+</a>
+</div>
+
+</section>
+
+<section>
+
+<h2 class="section-title">Story</h2>
+
+<div class="card">
+
+<p class="story">
+A curious cat somehow found itself trapped inside a collection of bizarre dimensions.
+Every room leads to another challenge, and every challenge leads deeper into the unknown.
+
+The only way out is to keep running, jumping and exploring.
+
+But someone is watching...
+</p>
+
+<p class="quote">
+"This feline won't stop running and jumping through my dimensions!"
+</p>
+
+</div>
+
+</section>
+
+<section>
+
+<h2 class="section-title">Screenshots</h2>
+
+<div class="gallery">
+
+<img src="screenshots/image_1.jpg">
+
+<img src="screenshots/image_2.jpg">
+
+<img src="screenshots/image_3.jpg">
+
+</div>
+
+</section>
+
+<section>
+
+<h2 class="section-title">Features</h2>
+
+<div class="features">
+
+<div class="feature">
+<h3>🐱 Spinning Cat</h3>
+<p>The hero performs a full spin every time it jumps.</p>
+</div>
+
+<div class="feature">
+<h3>🪙 Coin Collection</h3>
+<p>Gather coins to unlock doors and progress through levels.</p>
+</div>
+
+<div class="feature">
+<h3>⚔️ Boss Battle</h3>
+<p>Confront the mysterious ruler of the dimensions.</p>
+</div>
+
+<div class="feature">
+<h3>🎵 Original Soundtrack</h3>
+<p>Features music created specifically for SpinWhisker.</p>
+</div>
+
+</div>
+
+</section>
+
+<section>
+
+<h2 class="section-title">Technical Information</h2>
+
+<div class="info-grid">
+
+<div class="info-box">
+<div class="info-title">Developer</div>
+<div class="info-value">OLACAV Games</div>
+</div>
+
+<div class="info-box">
+<div class="info-title">Engine</div>
+<div class="info-value">Godot</div>
+</div>
+
+<div class="info-box">
+<div class="info-title">Release Year</div>
+<div class="info-value">2026</div>
+</div>
+
+<div class="info-box">
+<div class="info-title">Platforms</div>
+<div class="info-value">Web Browser & Android</div>
+</div>
+
+</div>
+
+</section>
+
+<section class="facts">
+
+<h2 class="section-title">Fun Facts</h2>
+
+<div class="card">
+
+<ul>
+<li>The spinning jump became the core mechanic of the game.</li>
+<li>The soundtrack was completely remade with original music.</li>
+<li>The game was developed by a solo creator.</li>
+<li>The final boss is tired of the cat invading dimensions.</li>
+</ul>
+
+</div>
+
+</section>
+
+</div>
+
+<footer>
+© 2026 GUSTAVOEGATOTV / OLACAV Games
+</footer>
+
+<script>
+
+const canvas=document.getElementById("bg");
+const ctx=canvas.getContext("2d");
+
+let w,h;
+
+function resize(){
+w=canvas.width=window.innerWidth;
+h=canvas.height=window.innerHeight;
+}
+
+resize();
+window.addEventListener("resize",resize);
+
+const particles=[];
+
+for(let i=0;i<90;i++){
+
+particles.push({
+x:Math.random()*w,
+y:Math.random()*h,
+s:Math.random()*2+0.5,
+vx:(Math.random()-0.5)*0.3,
+vy:(Math.random()-0.5)*0.3
+});
+
+}
+
+function animate(){
+
+ctx.clearRect(0,0,w,h);
+
+ctx.fillStyle="#FF9A5C";
+
+for(const p of particles){
+
+ctx.globalAlpha=.3;
+
+ctx.beginPath();
+ctx.arc(p.x,p.y,p.s,0,Math.PI*2);
+ctx.fill();
+
+p.x+=p.vx;
+p.y+=p.vy;
+
+if(p.x<0||p.x>w)p.vx*=-1;
+if(p.y<0||p.y>h)p.vy*=-1;
+
+}
+
+requestAnimationFrame(animate);
+
+}
+
+animate();
+
+</script>
+
+</body>
+</html>
