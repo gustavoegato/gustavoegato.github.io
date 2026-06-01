@@ -326,8 +326,6 @@
         <div class="hero-status"><span class="status-dot"></span>Available for opportunities</div>
         <h1 class="hero-name">
           <span class="line1">OLACAV</span>
-          <span class="line2">Games</span>
-          <span class="line3">by gsutavo</span>
         </h1>
         <p class="hero-desc">simplesmente um portifólio para meus projetos além da música.</p>
         <div class="hero-ctas">
@@ -348,7 +346,6 @@
             <span class="term-line">&nbsp;&nbsp;<span class="term-key">  print</span>: <span class="term-brace">("olacav")</span></span>
             <span class="term-line">&nbsp;&nbsp;<span class="term-key">if</span>: <span class="term-val">vacalo_dies</span>,</span>
             <span class="term-line">&nbsp;&nbsp;<span class="term-key">  me</span>: <span class="term-val"> = sad</span></span>
-            <span class="term-line"><span class="term-brace">}</span></span>
             <span class="term-line">&nbsp;</span>
             <span class="term-line"><span class="term-prompt"></span><span class="term-cursor"></span></span>
           </div>
@@ -491,21 +488,20 @@
 
   <section id="products" class="section">
     <div class="section-header">
-      <div><div class="label">Digital Products</div><h2 class="section-title">Things I've <span>shipped.</span></h2></div>
-      <a class="view-all" href="https://payhip.com/lucyb0207" target="_blank">Payhip store →</a>
+      <div><div class="label">Outros projetos</div><h2 class="section-title">mais<span>jogos</span></h2></div>
     </div>
     <div class="products-grid">
-      <a class="prod-card fade-up" href="https://payhip.com/b/YMGmh" target="_blank">
-        <div class="prod-cover"><div class="prod-cover-bg"></div><span style="position:relative;z-index:1;font-size:42px;">🐛</span></div>
-        <div class="prod-body"><div class="prod-name">Stop Guessing: A Guide To Debugging Anything</div><div class="prod-price">£6.99</div></div>
+      <a class="prod-card fade-up" href="https://gustavoegato.itch.io/gatotale" target="_blank">
+        <div class="prod-cover"><div class="prod-cover-bg"></div><span style="position:relative;z-index:1;font-size:42px;">📖</span></div>
+        <div class="prod-body"><div class="prod-name">Ajude a Amélia 2/div><div class="prod-price">Apenas um quiz de matemática.</div></div>
       </a>
-      <a class="prod-card fade-up" href="https://payhip.com/lucyb0207" target="_blank">
-        <div class="prod-cover"><div class="prod-cover-bg"></div><span style="position:relative;z-index:1;font-size:42px;">📦</span></div>
-        <div class="prod-body"><div class="prod-name">More products coming soon</div><div class="prod-price prod-placeholder">Stay tuned</div></div>
+      <a class="prod-card fade-up" href="https://gustavoegato.itch.io/supervitojumper" target="_blank">
+        <div class="prod-cover"><div class="prod-cover-bg"></div><span style="position:relative;z-index:1;font-size:42px;">🥛</span></div>
+        <div class="prod-body"><div class="prod-name">SUPER VITO JUMPER</div><div class="prod-price prod-placeholder">Um jogo pra meu artista favorito</div></div>
       </a>
-      <a class="prod-card fade-up" href="https://www.patreon.com/LucyBuilds" target="_blank">
-        <div class="prod-cover"><div class="prod-cover-bg"></div><span style="position:relative;z-index:1;font-size:42px;">✨</span></div>
-        <div class="prod-body"><div class="prod-name">Support the work & follow along</div><div class="prod-price prod-placeholder">patreon.com/LucyBuilds</div></div>
+      <a class="prod-card fade-up" href="https://gustavoegato.itch.io/ajudeaamelia2" target="_blank">
+        <div class="prod-cover"><div class="prod-cover-bg"></div><span style="position:relative;z-index:1;font-size:42px;">♥️</span></div>
+        <div class="prod-body"><div class="prod-name">GATOTALE</div><div class="prod-price prod-placeholder">Remake minúsculo de Undertale</div></div>
       </a>
     </div>
   </section>
@@ -583,7 +579,7 @@ const obs=new IntersectionObserver(entries=>{entries.forEach((e,i)=>{if(e.isInte
 document.querySelectorAll('.fade-up').forEach(el=>obs.observe(el));
 
 const l3=document.querySelector('.hero-name .line3');
-const txt='by gsutavo';l3.textContent='';let ci=0;
+const txt='games';l3.textContent='';let ci=0;
 setTimeout(()=>{const t=setInterval(()=>{l3.textContent+=txt[ci++];if(ci>=txt.length)clearInterval(t);},80);},800);
 </script>
 
