@@ -233,7 +233,21 @@ font-size:2rem;
 }
 
 }
+.mobile-only{
+display:none;
+}
 
+@media (max-width:768px){
+
+.desktop-only{
+display:none;
+}
+
+.mobile-only{
+display:block;
+}
+
+}
 </style>
 </head>
 <body>
@@ -273,25 +287,11 @@ DOWNLOAD APK
 </div>
 
 </section>
-<section id="play">
+<section id="play" class="desktop-only">
 
-<h2 class="section-title">play here</h2>
+<h2 class="section-title">play here. directly in your browser.</h2>
 
 <div class="card" style="text-align:center;">
-
-<p style="
-color:var(--muted);
-margin-bottom:25px;
-">
-directly in your browser.
-</p>
-
-<div style="
-display:flex;
-justify-content:center;
-overflow:hidden;
-border-radius:14px;
-">
 
 <iframe
 frameborder="0"
@@ -300,8 +300,6 @@ allowfullscreen
 width="960"
 height="540">
 </iframe>
-
-</div>
 
 </div>
 
