@@ -26,6 +26,7 @@
       --magenta:#C96FD8;
       --gold:   #FFD166;
       --blush:  #FF8FA3;
+      --blue:   #1B90DD;
       --r: 10px;
     }
 
@@ -207,7 +208,7 @@
     .platform-card::after { content:''; position:absolute; inset:0; opacity:0; transition:opacity .3s; border-radius:14px; z-index:1; }
     .platform-card:hover { transform:translateY(-4px); }
 
-    .platform-card.yt::after  { background:radial-gradient(ellipse at top left,rgba(255,107,107,.13) 0%,transparent 65%); }
+    .platform-card.yt::after  { background:radial-gradient(ellipse at top left,rgba(48,101,216,.13) 0%,transparent 65%); }
     .platform-card.gh::after  { background:radial-gradient(ellipse at top left,rgba(255,154,92,.11) 0%,transparent 65%); }
     .platform-card.ss::after  { background:radial-gradient(ellipse at top left,rgba(255,209,102,.11) 0%,transparent 65%); }
     .platform-card.tw::after  { background:radial-gradient(ellipse at top left,rgba(201,111,216,.11) 0%,transparent 65%); }
@@ -215,7 +216,7 @@
     .platform-card.pt::after  { background:radial-gradient(ellipse at top left,rgba(255,143,163,.11) 0%,transparent 65%); }
     .platform-card:hover::after { opacity:1; }
 
-    .platform-card.yt:hover { border-color:var(--dusk); }
+    .platform-card.yt:hover { border-color:var(--blue); }
     .platform-card.gh:hover { border-color:var(--sun); }
     .platform-card.ss:hover { border-color:var(--gold); }
     .platform-card.tw:hover { border-color:var(--magenta); }
@@ -231,7 +232,7 @@
 
     .platform-top { display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:1.2rem; position:relative; z-index:1; }
     .platform-icon { width:44px; height:44px; border-radius:10px; display:flex; align-items:center; justify-content:center; font-size:20px; }
-    .yt-ic { background:rgba(255,107,107,.15); }
+    .yt-ic { background:rgba(48,101,216,.15); }
     .gh-ic { background:rgba(255,154,92,.12); }
     .ss-ic { background:rgba(255,209,102,.12); }
     .tw-ic { background:rgba(201,111,216,.12); font-size:16px; font-weight:700; color:var(--magenta); font-family:'Syne',sans-serif; }
@@ -239,7 +240,7 @@
     .pt-ic { background:rgba(255,143,163,.12); }
 
     .platform-badge { font-family:'Space Mono',monospace; font-size:10px; padding:4px 10px; border-radius:999px; letter-spacing:.06em; }
-    .badge-yt { background:rgba(255,107,107,.15); color:var(--dusk); }
+    .badge-yt { background:rgba(48,101,216,.15); color:var(--dusk); }
     .badge-gh { background:rgba(255,154,92,.12); color:var(--sun); }
     .badge-ss { background:rgba(255,209,102,.12); color:var(--gold); }
     .badge-tw { background:rgba(201,111,216,.12); color:var(--magenta); }
