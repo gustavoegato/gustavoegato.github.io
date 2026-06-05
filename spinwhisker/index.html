@@ -248,6 +248,26 @@ display:block;
 }
 
 }
+
+.spinning-cat {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.spinning-cat img {
+    width: 120px;
+    image-rendering: pixelated;
+    animation: spin 3s linear infinite;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
 </style>
   <link rel="icon" type="image/png" sizes="32x32" href="../favicon.png">
   <link rel="apple-touch-icon" href="../favicon.png">
