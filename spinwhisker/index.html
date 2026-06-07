@@ -34,11 +34,49 @@ html{
 scroll-behavior:smooth;
 }
 
-body{
-font-family:'Syne',sans-serif;
-background:var(--bg);
-color:var(--text);
-overflow-x:hidden;
+body {
+    background-color: #0d0718;
+    overflow-x: hidden;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    opacity: 0.08;
+
+    background-image:
+        url("logo/midni_the_cat.png"),
+        url("images/portal_sprite.png");
+
+    background-repeat:
+        repeat,
+        repeat;
+
+    background-size:
+        96px,
+        128px;
+
+    background-position:
+        0 0,
+        48px 48px;
+
+    animation: backgroundScroll 40s linear infinite;
+}
+
+@keyframes backgroundScroll {
+    from {
+        background-position:
+            0 0,
+            48px 48px;
+    }
+
+    to {
+        background-position:
+            512px 512px,
+            -512px 512px;
+    }
 }
 
 canvas{
