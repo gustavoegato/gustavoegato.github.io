@@ -116,7 +116,7 @@ canvas#bg {
 
 /* ─── Mobile Nav ─── */
 .mobile-nav {
-  display: none; /* hidden by default */
+  display: none;
   position: fixed;
   top: 0;
   left: 0;
@@ -162,7 +162,7 @@ canvas#bg {
 .hamburger.open span:nth-child(3) { transform: rotate(-45deg) translate(5px, -6px); }
 
 .mobile-menu {
-  display: none; /* hidden by default */
+  display: none;
   position: fixed;
   top: 56px;
   left: 0;
@@ -290,20 +290,6 @@ section {
   line-height: 1.6;
 }
 
-/* ─── Story ─── */
-.story {
-  font-size: 1.05rem;
-  line-height: 1.9;
-  color: var(--muted);
-}
-
-.quote {
-  margin-top: 25px;
-  font-family: 'Space Mono', monospace;
-  color: var(--sun);
-  font-size: 1rem;
-}
-
 /* ─── Spinning Cat ─── */
 .spinning-cat {
   text-align: center;
@@ -408,71 +394,6 @@ section {
 .lightbox-prev { left: 20px; }
 .lightbox-next { right: 20px; }
 
-/* ─── Features ─── */
-.features {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
-}
-
-.feature {
-  background: var(--card);
-  border: 1px solid var(--border);
-  padding: 30px 25px;
-  border-radius: 14px;
-  transition: .25s;
-}
-
-.feature:hover {
-  border-color: var(--border-hover);
-  transform: translateY(-3px);
-}
-
-.feature h3 {
-  margin-bottom: 10px;
-  font-size: 1.2rem;
-}
-
-.feature p {
-  color: var(--muted);
-  line-height: 1.6;
-}
-
-/* ─── Info Grid ─── */
-.info-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 20px;
-}
-
-.info-box {
-  background: var(--card);
-  border: 1px solid var(--border);
-  border-radius: 14px;
-  padding: 24px 20px;
-  transition: .25s;
-}
-
-.info-box:hover {
-  border-color: var(--border-hover);
-  transform: translateY(-3px);
-}
-
-.info-title {
-  font-weight: 700;
-  margin-bottom: 6px;
-  font-size: 0.9rem;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  color: var(--muted);
-}
-
-.info-value {
-  color: var(--text);
-  font-size: 1.05rem;
-  font-weight: 600;
-}
-
 /* ─── Dev Log ─── */
 .devlog-list {
   display: flex;
@@ -534,7 +455,6 @@ section {
   width: 22px;
   height: 22px;
   fill: currentColor;
-  transition: fill .25s;
 }
 
 .social-link:hover {
@@ -572,12 +492,10 @@ footer {
     display: block;
   }
 
-  /* Override: mobile-nav needs flex, not block */
   .mobile-nav.mobile-only {
     display: flex;
   }
 
-  /* mobile-menu stays display:none until .open is added */
   .mobile-menu.mobile-only {
     display: none;
   }
@@ -607,12 +525,6 @@ footer {
 
   .gallery img {
     border-radius: 10px;
-  }
-
-  .features,
-  .info-grid {
-    grid-template-columns: 1fr;
-    gap: 12px;
   }
 
   .lightbox-prev,
@@ -677,8 +589,6 @@ footer {
   <a href="#home">Home</a>
   <a href="#trailer">Trailer</a>
   <a href="#gallery">Gallery</a>
-  <a href="#features">Features</a>
-  <a href="#info">Info</a>
   <a href="#devlog">Dev Log</a>
   <a href="#social">Social</a>
 </div>
@@ -745,48 +655,6 @@ footer {
   <img src="" alt="" id="lightboxImg">
   <button class="lightbox-next" id="lightboxNext" aria-label="Next">&#8250;</button>
 </div>
-
-<!-- Features -->
-<section class="reveal" id="features">
-  <h2 class="section-title">Features</h2>
-  <div class="features reveal-stagger">
-    <div class="feature">
-      <h3>5 Worlds &amp; 40 Levels</h3>
-      <p>Explore unique dimensions, each with its own mechanics, visuals, and challenges.</p>
-    </div>
-    <div class="feature">
-      <h3>Original Soundtrack</h3>
-      <p>Music composed exclusively for each world, setting the perfect atmosphere.</p>
-    </div>
-    <div class="feature">
-      <h3>Smooth &amp; Calm Gameplay</h3>
-      <p>Precise controls and a relaxing pace — made for you to enjoy every level at your own speed.</p>
-    </div>
-  </div>
-</section>
-
-<!-- Game Info -->
-<section class="reveal" id="info">
-  <h2 class="section-title">Game Info</h2>
-  <div class="info-grid reveal-stagger">
-    <div class="info-box">
-      <div class="info-title">Genre</div>
-      <div class="info-value">Platformer</div>
-    </div>
-    <div class="info-box">
-      <div class="info-title">Platforms</div>
-      <div class="info-value">Web (itch.io, Kongregate)</div>
-    </div>
-    <div class="info-box">
-      <div class="info-title">Release Date</div>
-      <div class="info-value">June 28, 2026</div>
-    </div>
-    <div class="info-box">
-      <div class="info-title">Engine</div>
-      <div class="info-value">Godot</div>
-    </div>
-  </div>
-</section>
 
 <!-- Dev Log -->
 <section class="reveal" id="devlog">
@@ -924,4 +792,93 @@ footer {
   reveals.forEach(function(el) { observer.observe(el); });
 
   // Force hero visible on load
-  var hero = document.querySelector('.hero.reve
+  var hero = document.querySelector('.hero.reveal');
+  if (hero) hero.classList.add('visible');
+})();
+
+// ─── Lightbox ───
+(function() {
+  var lightbox = document.getElementById('lightbox');
+  var lightboxImg = document.getElementById('lightboxImg');
+  var lightboxClose = document.getElementById('lightboxClose');
+  var lightboxPrev = document.getElementById('lightboxPrev');
+  var lightboxNext = document.getElementById('lightboxNext');
+  var galleryImages = document.querySelectorAll('[data-lightbox]');
+
+  var currentIndex = 0;
+  var images = Array.from(galleryImages);
+
+  function openLightbox(index) {
+    currentIndex = index;
+    lightboxImg.src = images[currentIndex].src;
+    lightboxImg.alt = images[currentIndex].alt;
+    lightbox.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeLightbox() {
+    lightbox.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  function showPrev(e) {
+    e.stopPropagation();
+    currentIndex = (currentIndex - 1 + images.length) % images.length;
+    lightboxImg.src = images[currentIndex].src;
+    lightboxImg.alt = images[currentIndex].alt;
+  }
+
+  function showNext(e) {
+    e.stopPropagation();
+    currentIndex = (currentIndex + 1) % images.length;
+    lightboxImg.src = images[currentIndex].src;
+    lightboxImg.alt = images[currentIndex].alt;
+  }
+
+  images.forEach(function(img, i) {
+    img.addEventListener('click', function() { openLightbox(i); });
+  });
+
+  lightbox.addEventListener('click', function(e) {
+    if (e.target === lightbox) closeLightbox();
+  });
+
+  lightboxClose.addEventListener('click', closeLightbox);
+  lightboxPrev.addEventListener('click', showPrev);
+  lightboxNext.addEventListener('click', showNext);
+
+  // Keyboard nav
+  document.addEventListener('keydown', function(e) {
+    if (!lightbox.classList.contains('open')) return;
+    if (e.key === 'Escape') closeLightbox();
+    if (e.key === 'ArrowLeft') showPrev(e);
+    if (e.key === 'ArrowRight') showNext(e);
+  });
+})();
+
+// ─── Mobile Hamburger Menu ───
+(function() {
+  var hamburger = document.getElementById('hamburger');
+  var mobileMenu = document.getElementById('mobileMenu');
+  var menuLinks = mobileMenu.querySelectorAll('a');
+
+  function toggleMenu() {
+    hamburger.classList.toggle('open');
+    mobileMenu.classList.toggle('open');
+    document.body.style.overflow = mobileMenu.classList.contains('open') ? 'hidden' : '';
+  }
+
+  hamburger.addEventListener('click', toggleMenu);
+
+  menuLinks.forEach(function(link) {
+    link.addEventListener('click', function() {
+      hamburger.classList.remove('open');
+      mobileMenu.classList.remove('open');
+      document.body.style.overflow = '';
+    });
+  });
+})();
+</script>
+
+</body>
+</html>
