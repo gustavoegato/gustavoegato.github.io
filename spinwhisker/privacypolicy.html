@@ -1,61 +1,304 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SpinWhisker - Privacy Policy</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet">
-<style>
-:root{
---bg:#0D0A0F;--card:#1F1828;--text:#F5EEE8;--muted:#9A8A80;
---sun:#FF9A5C;--border:rgba(255,180,120,.18);
-}
-*{box-sizing:border-box;margin:0;padding:0}
-body{font-family:'Syne',sans-serif;background:var(--bg);color:var(--text);padding:40px 20px}
-.container{max-width:900px;margin:auto;background:var(--card);border:1px solid var(--border);border-radius:16px;padding:40px}
-h1{font-size:clamp(42px,8vw,80px);line-height:.95;margin-bottom:24px}
-h1 span{color:var(--sun);display:block}
-h2{color:var(--sun);margin:28px 0 10px}
-p{color:var(--muted);line-height:1.8}
-.footer{margin-top:30px;padding-top:20px;border-top:1px solid var(--border);font-family:'Space Mono',monospace;font-size:12px;color:var(--muted)}
-.small{font-family:'Space Mono',monospace;color:var(--sun);margin-bottom:20px;font-size:12px;text-transform:uppercase}
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SpinWhisker (Privacy Policy)</title>
+  <meta name="description" content="Privacy Policy for SpinWhisker" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+
+  <link rel="icon" type="image/png" sizes="32x32" href="../favicon.png" />
+  <link rel="apple-touch-icon" href="../favicon.png" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:       #0D0A0F;
+      --card:     #1F1828;
+      --border:   rgba(255,180,120,0.08);
+      --border2:  rgba(255,180,120,0.18);
+      --text:     #F5EEE8;
+      --muted:    #907F99;
+      --faint:    #5a5060;
+      --sun:      #FF9A5C;
+      --purple1:  #F0B5F2;
+      --purple3:  #87778F;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Syne', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      font-size: 16px;
+      line-height: 1.6;
+      overflow-x: hidden;
+      min-height: 100vh;
+    }
+
+    /* ─── Header ─── */
+    header {
+      border-bottom: 1px solid var(--border);
+      padding: 1.2rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(13,10,15,.92);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .header-logo {
+      font-family: 'Space Mono', monospace;
+      font-size: 13px;
+      color: var(--sun);
+      text-decoration: none;
+      letter-spacing: -.02em;
+    }
+    .header-logo span { color: var(--muted); }
+
+    .back-link {
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      color: var(--muted);
+      text-decoration: none;
+      transition: color .2s;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .back-link:hover { color: var(--sun); }
+
+    /* ─── Main ─── */
+    main {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 3rem 2rem 5rem;
+    }
+
+    .policy-header {
+      text-align: center;
+      margin-bottom: 3rem;
+      padding-bottom: 2rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .policy-header h1 {
+      font-size: clamp(28px, 4vw, 42px);
+      font-weight: 800;
+      letter-spacing: -.03em;
+      margin-bottom: .5rem;
+    }
+
+    .policy-header .last-revised {
+      font-family: 'Space Mono', monospace;
+      font-size: 12px;
+      color: var(--faint);
+    }
+
+    /* ─── Section Styles ─── */
+    section {
+      margin-bottom: 2.5rem;
+    }
+
+    section h2 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: .75rem;
+      letter-spacing: -.01em;
+    }
+
+    section p, section li {
+      color: var(--muted);
+      line-height: 1.85;
+      font-size: .95rem;
+      margin-bottom: .75rem;
+    }
+
+    section ul {
+      padding-left: 1.5rem;
+      margin-bottom: .75rem;
+    }
+
+    section li {
+      margin-bottom: .35rem;
+    }
+
+    section a {
+      color: var(--sun);
+      text-decoration: none;
+      transition: color .2s;
+    }
+    section a:hover { color: var(--purple1); }
+
+    strong {
+      color: var(--text);
+      font-weight: 600;
+    }
+
+    /* ─── Contact Box ─── */
+    .contact-box {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin-top: 1rem;
+    }
+
+    .contact-box p {
+      margin-bottom: .25rem;
+    }
+
+    .contact-box .studio-name {
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: .35rem;
+    }
+
+    .contact-box .email {
+      font-family: 'Space Mono', monospace;
+      font-size: .9rem;
+      color: var(--sun);
+    }
+
+    /* ─── Footer ─── */
+    footer {
+      text-align: center;
+      padding: 2rem;
+      border-top: 1px solid var(--border);
+      color: var(--purple3);
+      font-size: 12px;
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    @media (max-width: 600px) {
+      header { padding: 1rem 1.2rem; }
+      main { padding: 2rem 1.2rem 3rem; }
+    }
+  </style>
 </head>
 <body>
-<div class="container">
-<div class="small">OLACAV Games</div>
 
-<h1>Privacy <span>Policy</span></h1>
+<header>
+  <a href="index.html" class="back-link">&larr; Back to home</a>
+</header>
 
-<p><strong>Last Revised:</strong> June 2026</p>
+<main>
 
-<h2>Introduction</h2>
-<p>Thank you for playing SpinWhisker. We value your trust. This is our policy on information collection and privacy.</p>
+  <div class="policy-header">
+    <h1>Privacy Policy</h1>
+    <p class="last-revised">Last Revised: July 2026</p>
+  </div>
 
-<h2>Information Collection</h2>
-<p>SpinWhisker does not collect, store, process or share any user information.</p>
+  <!-- Introduction -->
+  <section id="introduction">
+    <h2>Introduction</h2>
+    <p>
+      Thank you for playing <strong>SpinWhisker</strong>.
+      Your privacy is important to us. This Privacy Policy explains what information the game collects, how it is used, and your rights regarding that information.
+    </p>
+  </section>
 
-<h2>User Accounts</h2>
-<p>We do not require user accounts. We do not request users to divulge their names, email addresses, phone numbers, or location.</p>
+  <!-- Local Data -->
+  <section id="local-data">
+    <h2>Local Data</h2>
+    <p>
+      SpinWhisker stores your game progress, settings, achievements and other gameplay-related information <strong>locally on your device</strong>.
+      This data is used only to provide game functionality and is not transmitted to us.
+    </p>
+  </section>
 
-<h2>Third Party Services</h2>
-<p>SpinWhisker does not use any advertising or analytic services, user tracking, social networks or any related or similar third party services.</p>
+  <!-- Information Collection -->
+  <section id="information-collection">
+    <h2>Information Collection</h2>
+    <p>
+      At this time, SpinWhisker <strong>does not collect, store, process or share</strong> any personal information such as your name, email address, phone number or precise location.
+    </p>
+  </section>
 
-<h2>Data Sharing</h2>
-<p>Since there is no information to collect, there is nothing to sell, share, rent or give to other parties.</p>
+  <!-- User Accounts -->
+  <section id="user-accounts">
+    <h2>User Accounts</h2>
+    <p>
+      SpinWhisker does not require users to create an account.
+    </p>
+  </section>
 
-<h2>Children's Policy</h2>
-<p>SpinWhisker does not intentionally give services to children or collect their information.</p>
+  <!-- Third-Party Services -->
+  <section id="third-party-services">
+    <h2>Third-Party Services</h2>
+    <p>The current version of SpinWhisker does <strong>not</strong> use:</p>
+    <ul>
+      <li>Advertising services</li>
+      <li>Analytics services</li>
+      <li>User tracking</li>
+      <li>Social network integrations</li>
+      <li>Cloud services</li>
+    </ul>
+    <p>
+      Future versions of the game may optionally integrate services such as:
+    </p>
+    <ul>
+      <li><strong>Google Play Games</strong> (Achievements, Leaderboards and Cloud Save)</li>
+      <li><strong>Google AdMob</strong> (Advertisements)</li>
+      <li><strong>Google Play Billing</strong> (In-App Purchases)</li>
+    </ul>
+    <p>
+      If any of these services are added, this Privacy Policy will be updated <strong>before</strong> they become available.
+    </p>
+  </section>
 
-<h2>Policy Changes</h2>
-<p>This policy is subject to change when and if we add services or features.</p>
+  <!-- Data Sharing -->
+  <section id="data-sharing">
+    <h2>Data Sharing</h2>
+    <p>
+      Since SpinWhisker currently does not collect personal information, there is no personal data to sell, rent or share with third parties.
+    </p>
+  </section>
 
-<h2>Contact</h2>
-<p>olacavgames@gmail.com</p>
+  <!-- Children's Privacy -->
+  <section id="childrens-privacy">
+    <h2>Children's Privacy</h2>
+    <p>
+      SpinWhisker is intended for players of <strong>all ages</strong>.
+      The game does not knowingly collect personal information from children.
+    </p>
+  </section>
 
-<div class="footer">© 2026 GUSTAVOEGATOTV / OLACAV Games</div>
-</div>
+  <!-- Policy Changes -->
+  <section id="policy-changes">
+    <h2>Policy Changes</h2>
+    <p>
+      This Privacy Policy may be updated as new features or third-party services are added.
+      Any significant changes will be reflected by updating the "Last Revised" date above.
+    </p>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>
+      If you have any questions about this Privacy Policy, you can contact us at: olacavgames@gmail.com
+    </p>
+  </section>
+
+</main>
+
+<footer>
+  &copy; 2026 GUSTAVOEGATOTV &middot; OLACAV Games
+</footer>
+
 </body>
 </html>
